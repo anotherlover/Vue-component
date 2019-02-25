@@ -1,4 +1,5 @@
 # vue-component
+  用于vue组件封装
 
 ## Project setup
 ```
