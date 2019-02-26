@@ -1,5 +1,5 @@
 <template>
-  <div >
+  <div style="max-height: 100px;width:500px;border: 1px solid #999">
     <div class="wrap">
       <file-upload
         ref="upload"
@@ -15,7 +15,6 @@
       >
       上传文件
       </file-upload>
-      <slot></slot>
       <!-- <Dropdown trigger="click" placement="bottom-end">
           <a href="javascript:void(0)">
               |
@@ -27,11 +26,10 @@
       </Dropdown> -->
     </div>
     <!-- 拖拽区域 -->
-    <!-- <v-drag :visible.sync="dragVisible"
-      @spreadFile='spreadFile'></v-drag> -->
+    <v-drag :visible.sync="dragVisible"
+      @spreadFile='spreadFile'></v-drag>
     <!-- 显示区域 -->
     <ul>
-
       <li v-for="file in files" class="row" :key='file.id'>
         <!-- name -->
         <div class="name t">{{file.name}}</div>
@@ -67,11 +65,8 @@
 </template>
 
 <script>
-// TODO: 拖拽功能 1.引入drag组件 2. 鼠标释放时获取file的参数
-
-// import dragUpload from './EmailUpload'
+import dragUpload from './EmailUpload'
 export default {
-  name: 'BaseUpload',
   data () {
     return {
       files: [],
@@ -79,7 +74,7 @@ export default {
     }
   },
   components: {
-    // 'v-drag': dragUpload
+    'v-drag': dragUpload
   },
   methods: {
     /**
@@ -89,7 +84,6 @@ export default {
      * @return undefined
      */
     inputFile: function (newFile, oldFile) {
-      this.$emit('inputFile', { 'newFile': newFile, 'oldFile': oldFile })
       console.log('newfile', newFile)
       console.log('old file', oldFile)
       console.log('files', this.files)
@@ -136,18 +130,12 @@ export default {
 
 <style lang="less" scoped>
   .wrap {
-    display: inline-block;
-    width: 125px;
+    margin-top: 40px;
     font-size: 16px;
     position: relative;
     height:30px;
     line-height: 30px;
 
-    .ivu-dropdown {
-      position: relative;
-      top: -10px;
-      left: 5px;
-    }
     .row {
       display: block;
       font-size: 14px;

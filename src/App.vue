@@ -1,8 +1,23 @@
 <template>
   <div id="app">
+    <!-- <v-upload></v-upload> -->
     <router-view/>
   </div>
 </template>
+
+<script>
+// import uploadEamil from './components/eamilUpload'
+export default {
+  data () {
+    return {
+
+    }
+  },
+  components: {
+    // 'v-upload': uploadEamil
+  }
+}
+</script>
 
 <style lang="less">
 #app {
