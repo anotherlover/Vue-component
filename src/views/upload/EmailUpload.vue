@@ -56,7 +56,6 @@ export default {
       this.close()
       this.tips = '将文件拖拽到此区域'
       const dt = e.dataTransfer.files
-      console.log('dt', dt)
       for (let i = 0; i < dt.length; i++) {
         this.uploadFile(dt[i])
       }

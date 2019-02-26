@@ -4,7 +4,7 @@
     <baseUpload
      @inputFile="inputFile"
     :class="{'drag': canDrag}">
-      <Dropdown class="myDropDown"
+      <!-- <Dropdown class="myDropDown"
         trigger="click"
         placement="bottom-end">
           <a href="javascript:void(0)">
@@ -14,10 +14,10 @@
           <DropdownMenu slot="list">
               <DropdownItem @click.native="checkDragState">拖拽上传</DropdownItem>
           </DropdownMenu>
-      </Dropdown>
+      </Dropdown> -->
     </baseUpload>
-    <dragUpload :visible.sync="dragVisible"
-      @spreadFile='spreadFile'/>
+    <!-- <dragUpload :visible.sync="dragVisible"
+      @spreadFile='spreadFile'/> -->
      <div class="content">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque provident quae officia qui rerum est et veritatis, hic impedit tempora, fuga nemo sunt accusantium? Deserunt reiciendis impedit quae in repellat!</div>
   </div>
 </template>
@@ -27,7 +27,7 @@ export default {
   data () {
     return {
       canDrag: false,
-      dragVisible: false
+      // dragVisible: false
 
     }
   },
@@ -35,6 +35,9 @@ export default {
     dragUpload
   },
   methods: {
+    inputFile(newFile, oldFile) {
+      // console.log('new')
+    },
     checkDragState () {
       // 控制拖拽框出现
       this.dragVisible = true
@@ -42,7 +45,6 @@ export default {
     },
     spreadFile (file) {
       // 上传文件
-
       console.log('拖拽的文件', file)
     }
   }

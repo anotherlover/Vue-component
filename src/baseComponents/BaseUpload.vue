@@ -5,7 +5,6 @@
         ref="upload"
         v-model="files"
         class="upload"
-        :drop="true"
         accept="image/png,image/gif,image/jpeg,image/webp"
         post-action="/post.method"
         put-action="/put.method"
@@ -16,7 +15,7 @@
       上传文件
       </file-upload>
       <slot></slot>
-      <!-- <Dropdown trigger="click" placement="bottom-end">
+      <Dropdown trigger="click" placement="bottom-end">
           <a href="javascript:void(0)">
               |
               <Icon type="ios-arrow-down"></Icon>
@@ -24,11 +23,11 @@
           <DropdownMenu slot="list">
               <DropdownItem @click.native="canDrag">拖拽上传</DropdownItem>
           </DropdownMenu>
-      </Dropdown> -->
+      </Dropdown>
     </div>
     <!-- 拖拽区域 -->
-    <!-- <v-drag :visible.sync="dragVisible"
-      @spreadFile='spreadFile'></v-drag> -->
+    <v-drag :visible.sync="dragVisible"
+      @spreadFile='spreadFile'></v-drag>
     <!-- 显示区域 -->
     <ul>
 
@@ -69,7 +68,7 @@
 <script>
 // TODO: 拖拽功能 1.引入drag组件 2. 鼠标释放时获取file的参数
 
-// import dragUpload from './EmailUpload'
+import dragUpload from '../views/upload/EmailUpload'
 export default {
   name: 'BaseUpload',
   data () {
@@ -79,7 +78,7 @@ export default {
     }
   },
   components: {
-    // 'v-drag': dragUpload
+    'v-drag': dragUpload
   },
   methods: {
     /**
@@ -128,6 +127,7 @@ export default {
       this.dragVisible = true
     },
     spreadFile (file) {
+      this.files.push(file)
       console.log('拖拽的文件', file)
     }
   }
