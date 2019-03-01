@@ -41,7 +41,6 @@ export default {
   methods: {
     // 保存拖动到浏览器中的文件, 并上传
     uploadFile: function (file) {
-      console.log('file', file)
       this.$emit('spreadFile', file)
       //  do something upload action
     },

@@ -18,6 +18,11 @@ const routes = [
   {
     path: '/demo',
     component: () => import('../views/upload/uploadDemo')
+  },
+  {
+    path: '/editor',
+    name: 'editor',
+    component: () => import('views/editor/editor')
   }
 ]
 

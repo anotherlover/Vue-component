@@ -2,8 +2,10 @@
   <div>
     <div class="otherPlace"></div>
     <baseUpload
-     @inputFile="inputFile"
-    :class="{'drag': canDrag}">
+     putAction="/upload/put.php"
+     postAction="/upload/post.php"
+     @spreadFiles="getFiles"
+    >
       <!-- <Dropdown class="myDropDown"
         trigger="click"
         placement="bottom-end">
@@ -22,22 +24,19 @@
   </div>
 </template>
 <script>
-import dragUpload from './EmailUpload'
+// import dragUpload from './EmailUpload'
 export default {
   data () {
     return {
-      canDrag: false,
+      // canDrag: false,
       // dragVisible: false
 
     }
   },
   components: {
-    dragUpload
+    // dragUpload
   },
   methods: {
-    inputFile(newFile, oldFile) {
-      // console.log('new')
-    },
     checkDragState () {
       // 控制拖拽框出现
       this.dragVisible = true
@@ -46,6 +45,10 @@ export default {
     spreadFile (file) {
       // 上传文件
       console.log('拖拽的文件', file)
+    },
+    // 得到files 数据
+    getFiles (files) {
+      console.log('files', files)
     }
   }
 }
