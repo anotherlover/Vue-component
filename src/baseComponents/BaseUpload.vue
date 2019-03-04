@@ -44,6 +44,9 @@
         <div class="progress t">
           <img v-if="file.type.split('/')[0] === 'image'" :src="file.blob" :alt="file.name" style="width: 50px; height: 50px;">
         </div>
+        <div class="preview">
+          <iframe :src="file.blob" :style="{display: true, width: '100%', height: '400%'}"  frameborder="0"></iframe>
+        </div>
         <!-- action :
           upload: 上传,
           remove： 移除,
@@ -76,7 +79,6 @@
 </template>
 
 <script>
-// TODO: 拖拽功能 1.引入drag组件 2. 鼠标释放时获取file的参数
 
 import dragUpload from '../views/upload/EmailUpload'
 export default {

@@ -8,6 +8,7 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "ckeditor": "^4.11.3",
     "formidable": "^1.2.1",
     "iview": "^3.2.2",
     "jquery": "^3.3.1",

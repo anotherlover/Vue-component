@@ -18,8 +18,6 @@
           </DropdownMenu>
       </Dropdown> -->
     </baseUpload>
-    <!-- <dragUpload :visible.sync="dragVisible"
-      @spreadFile='spreadFile'/> -->
      <div class="content">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque provident quae officia qui rerum est et veritatis, hic impedit tempora, fuga nemo sunt accusantium? Deserunt reiciendis impedit quae in repellat!</div>
   </div>
 </template>
