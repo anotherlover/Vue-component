@@ -117,8 +117,8 @@ export default {
           }
         ],
         toolbar: 'Full', // 菜单栏
-        language: 'en-US', // 语言
-        uiColor: '#9AB8F3' // 主题颜色
+        language: 'zh-CN', // 语言
+        uiColor: '#eaf3fd' // 主题颜色
       })
       //  CKEditor 初始化完成加载数据
       CKEDITOR.on('instanceReady', e => {
