@@ -149,7 +149,7 @@ export default {
       this.dragVisible = true
     },
     spreadFile (file) {
-      // 暂时适配列表中有的
+      // 暂时适配列表中有的，契合vue-upload-component
       const _file = Object.assign({}, {
         file: file,
         name: file.name,

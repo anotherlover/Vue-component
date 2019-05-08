@@ -1,6 +1,10 @@
 <template>
   <div class="myEditor">
-    <textarea name=""  id="editor" cols="10" style="width: auto" rows="30"></textarea>
+    <textarea name=""
+      id="editor"
+      cols="10"
+      style="width: auto"
+      rows="30"></textarea>
   </div>
 </template>
 
@@ -144,5 +148,5 @@ export default {
 }
 </script>
 <style lang="less" scoped>
-  // @import './editPlgin/content.css'
+// @import './editPlgin/content.css'
 </style>
